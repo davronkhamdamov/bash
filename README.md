@@ -131,21 +131,21 @@
     fi
     ```
 
-10. Arrays:
+11. Arrays:
     ```bash
     #!/bin/bash
     fruits=("Apple" "Orange" "Banana")
       echo "First fruit: ${fruits[0]}"
       echo "All fruits: ${fruits[@]}"
     ```
-11. String Manipulation:
+12. String Manipulation:
     ```bash
     #!/bin/bash
     text="Hello, World!"
     echo "Length of text: ${#text}"
     echo "Substring: ${text:0:5}"
     ```
-12. Case Statements:
+13. Case Statements:
 
     ```bash
     #!/bin/bash
@@ -166,7 +166,7 @@
 
     ```
 
-13. Math Operations:
+14. Math Operations:
     ```bash
     #!/bin/bash
     num1=10
@@ -174,25 +174,25 @@
     sum=$((num1 + num2))
     echo "Sum: $sum"
     ```
-14. File Permissions:
+15. File Permissions:
     ```bash
     #!/bin/bash
     filename="example.txt"
     chmod +x $filename # Make the file executable
     ```
-15. Environment Variables:
+16. Environment Variables:
     ```bash
     #!/bin/bash
     echo "Home directory: $HOME"
     echo "User: $USER"
     ```
-16. Redirecting Output:
+17. Redirecting Output:
     ```bash
     #!/bin/bash
     echo "This is a message" > output.txt
     echo "This is another message" >> output.txt # Append to the file
     ```
-17. Pipelines:
+18. Pipelines:
 
     ```bash
     #!/bin/bash
@@ -200,7 +200,7 @@
     ls /bin | grep "sh"
     ```
 
-18. Functions with Return Values:
+19. Functions with Return Values:
 
     ```bash
     #!/bin/bash
@@ -213,14 +213,14 @@
     echo "Sum: $?"
     ```
 
-19. Reading from a File:
+20. Reading from a File:
     ```bash
     #!/bin/bash
     while IFS= read -r line; do
       echo "Line: $line"
     done < input.txt
     ```
-20. Checking if a Command Exists:
+21. Checking if a Command Exists:
 
     ```bash
     #!/bin/bash
@@ -232,10 +232,10 @@
     fi
     ```
 
-    21. Making Scripts Portable:
+21. Making Scripts Portable:
         Use `#!/usr/bin/env` bash as the shebang line instead of `#!/bin/bash`. This helps in making the script more portable.
 
-21. Error Handling:
+22. Error Handling:
     Use the trap command to handle errors or signals gracefully.
 
     ```bash
@@ -243,7 +243,7 @@
     trap 'echo "Error occurred"; exit 1' ERR
     ```
 
-22. Creating Temporary Files:
+23. Creating Temporary Files:
 
     ```bash
     #!/bin/bash
@@ -255,10 +255,10 @@
     rm $tempfile
     ```
 
-23. Debugging:
+24. Debugging:
     Add `set -x` at the beginning of the script to enable debugging. It prints each command and its arguments to the standard error output.
 
-24. User Confirmation:
+25. User Confirmation:
     ```bash
     #!/bin/bash
     read -p "Do you want to continue? (y/n): " answer
@@ -269,25 +269,25 @@
     exit 1
     fi
     ```
-25. Prompting for Password:
+26. Prompting for Password:
     ```bash
     #!/bin/bash
     echo -n "Enter your password: "
     read -s password
     echo "Password entered."
     ```
-26. Running Commands in the Background:
+27. Running Commands in the Background:
     ```bash
     #!/bin/bash
     command &
     ```
-27. Getting Current Date and Time:
+28. Getting Current Date and Time:
     ```bash
     #!/bin/bash
     current_date=$(date +"%Y-%m-%d")
     echo "Current date: $current_date"
     ```
-28. Checking if a Directory Exists:
+29. Checking if a Directory Exists:
     ```bash
     #!/bin/bash
     directory="mydir"
@@ -297,7 +297,7 @@
       echo "$directory does not exist."
     fi
     ```
-29. Sleeping:
+30. Sleeping:
 
     ```bash
     #!/bin/bash
@@ -306,7 +306,7 @@
     echo "Awake!"
     ```
 
-30. Checking if a File is Empty:
+31. Checking if a File is Empty:
     ```bash
     #!/bin/bash
     file="example.txt"
@@ -316,14 +316,14 @@
       echo "$file is empty."
     fi
     ```
-31. Using Wildcards (Globbing):
+32. Using Wildcards (Globbing):
     ```bash
     #!/bin/bash
     for file in \*.txt; do
       echo "Processing $file"
     done
     ```
-32. Checking if a String is Empty:
+33. Checking if a String is Empty:
     ```bash
     #!/bin/bash
     str=""
@@ -333,21 +333,21 @@
       echo "String is not empty."
     fi
     ```
-33. Reading Passwords Securely:
+34. Reading Passwords Securely:
     ```bash
     #!/bin/bash
     echo -n "Enter your password: "
     read -s password
     echo -e "\nPassword entered."
     ```
-34. Getting Process IDs:
+35. Getting Process IDs:
     ```bash
     #!/bin/bash
     process_name="myprocess"
     pid=$(pgrep $process_name)
     echo "Process ID of $process_name: $pid"
     ```
-35. Using getopts for Command-Line Options:
+36. Using getopts for Command-Line Options:
 
     ```bash
     #!/bin/bash
@@ -375,7 +375,7 @@
 
     ```
 
-36. Creating a Menu:
+37. Creating a Menu:
 
     ```bash
     #!/bin/bash
@@ -397,14 +397,14 @@
     done
     ```
 
-37. Appending to an Array:
+38. Appending to an Array:
     ```bash
     #!/bin/bash
     fruits=("Apple" "Orange")
     fruits+=("Banana")
       echo "All fruits: ${fruits[@]}"
     ```
-38. Checking Network Connectivity:
+39. Checking Network Connectivity:
     ```bash
     #!/bin/bash
     ping -c 1 google.com &> /dev/null
@@ -414,7 +414,7 @@
       echo "Internet is not reachable."
     fi
     ```
-39. Checking if a Command is Running:
+40. Checking if a Command is Running:
     ```bash
     #!/bin/bash
     process_name="myprocess"
@@ -424,45 +424,45 @@
       echo "$process_name is not running."
     fi
     ```
-40. Colorizing Output:
+41. Colorizing Output:
     ```bash
     #!/bin/bash
     RED='\033[0;31m'
     NC='\033[0m' # No Color
     echo -e "${RED}This is in red.${NC}"
     ```
-41. Getting External Input Safely:
+42. Getting External Input Safely:
     ```bash
     #!/bin/bash
     read -p "Enter a value: " -r input
     echo "You entered: $input"
     ```
-42. Checking if a Command Succeeded:
+43. Checking if a Command Succeeded:
     ```bash
     #!/bin/bash
     mkdir mydirectory && echo "Directory created successfully."
     ```
-43. Using awk for Text Processing:
+44. Using awk for Text Processing:
     ```bash
     #!/bin/bash
     echo "John 25" | awk '{print "Name: " $1; print "Age: " $2}'
     ```
-44. Finding and Replacing in Files:
+45. Finding and Replacing in Files:
     ```bash
     #!/bin/bash
     sed -i 's/old/new/g' myfile.txt
     ```
-45. Displaying Disk Usage:
+46. Displaying Disk Usage:
     ```bash
     #!/bin/bash
     df -h
     ```
-46. Checking Uptime:
+47. Checking Uptime:
     ```bash
     #!/bin/bash
     uptime
     ```
-47. Running Commands Asynchronously:
+48. Running Commands Asynchronously:
     ```bash
     #!/bin/bash
     command1 &
@@ -470,13 +470,13 @@
     wait
     echo "Both commands have finished."
     ```
-48. Appending Date to File Names:
+49. Appending Date to File Names:
     ```bash
     #!/bin/bash
     current_date=$(date +"%Y%m%d")
     mv myfile.txt myfile*$current_date.txt
     ```
-49. Checking if a Variable is Set:
+50. Checking if a Variable is Set:
     ```bash
     #!/bin/bash
     if [ -z ${myvar+x} ]; then
